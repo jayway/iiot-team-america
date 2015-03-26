@@ -54,4 +54,4 @@ if __name__ == "__main__":
         for shard_id in shard_ids:
             shard_it = shard_id["shard_iterator"]
             shard_id["shard_iterator"] = process_shard(kinesis, shard_it)
-            time.sleep(0.2)
+            time.sleep(0.3)
