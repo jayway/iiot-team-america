@@ -36,8 +36,8 @@ def get_shard_ids(kinesis, stream_name):
 def process_shard(kinesis,shard_it):
     out = kinesis.get_records(shard_it, limit=100)
     for record in out["Records"]:
-        data = json.loads(record["Data"])
-        print data
+        #data = json.loads(record["Data"])
+        print record["Data"]
     return out["NextShardIterator"]
 
 if __name__ == "__main__":
@@ -52,7 +52,6 @@ if __name__ == "__main__":
     
     while 1 == 1:
         for shard_id in shard_ids:
-            # print shard_id
             shard_it = shard_id["shard_iterator"]
             shard_id["shard_iterator"] = process_shard(kinesis, shard_it)
             time.sleep(0.2)

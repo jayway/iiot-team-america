@@ -19,7 +19,7 @@ for event in SensorEvent().generate(50):
     event["timestamp"] = event["timestamp"].isoformat()
     if event["tag"].startswith('humidity'):
         event["metric"] = event["humidity"]
-    event["humidity"] = None
+    event.pop("humidity", None)
     print(event)
     
     kinesis.put_record(stream_name, json.dumps(event), event["installationId"])
