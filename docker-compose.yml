@@ -1,7 +1,7 @@
 elasticsearch:
   image: deviantony/elk-elasticsearch
   ports:
-    - "10000:9200"
+    - "9200:9200"
 logstash:
   image: deviantony/elk-logstash
   volumes:

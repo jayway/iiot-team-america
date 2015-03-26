@@ -14,6 +14,6 @@
 This will create 4 Docker containers with Elasticsearch, Logstash, Kibana 3 and Kibana 4 running in them and connected to each other. Four ports are exposed for access:
 
 * 10001: Logstash TCP input.
-* 10000: Elasticsearch HTTP (With Marvel plugin accessible via [http://localhost:9200/_plugin/marvel](http://localhost:10000/_plugin/marvel))
+* 9200: Elasticsearch HTTP (With Marvel plugin accessible via [http://localhost:9200/_plugin/marvel](http://localhost:9200/_plugin/marvel))
 * 10002: Kibana 3 web interface.
 * 10003: Kibana 4 web interface.
