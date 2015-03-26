@@ -1,0 +1,24 @@
+elasticsearch:
+  image: deviantony/elk-elasticsearch
+  ports:
+    - "10000:9200"
+logstash:
+  image: deviantony/elk-logstash
+  volumes:
+    - logstash-conf:/etc/logstash/conf.d
+  ports:
+    - "10001:5000"
+  links:
+    - elasticsearch
+kibana3:
+  image: deviantony/elk-kibana:kibana3
+  ports:
+    - "10002:80"
+  links:
+    - elasticsearch
+kibana4:
+  image: deviantony/elk-kibana
+  ports:
+    - "10003:5601"
+  links:
+    - elasticsearch
